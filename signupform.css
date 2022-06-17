@@ -67,9 +67,22 @@ input{
     width: 100%;
     padding: 15px 25px;
 }
+.form-control.error input{
+    border-color: hsl(0, 100%, 74%);
+    color: hsl(0, 100%, 74%);
+}
 input:focus{
     border: 1.3px solid hsl(248, 32%, 49%);
     outline: none;
+}
+.form-control img{
+    opacity: 0;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.form-control.error img{
+    opacity: 1;
 }
 button{
     background-color: hsl(154, 59%, 51%);

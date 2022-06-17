@@ -35,15 +35,19 @@ form.addEventListener('submit', e => {
 });
 
 function addErrorTo(field, message) {
+    const formControl = form[field].parentNode;
+    formControl.classList.add('error');
+
     const small=form[field].parentNode.querySelector('small');
     small.innerText = message;
     small.style.opacity = '1'
 }
 function removeErrorFrom(field){
-    const small = form[field].parentNode.querySelector
-    ('small');
-    small.innerText = message;
-    small.style.opacity = '0'
+    const formControl = form[field].parentNode;
+    formControl.classList.remove('error');
+
+    const small = formControl.querySelector('small');
+    small.style.opacity = '0';
 }
 function isValid(email){
     var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
