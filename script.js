@@ -10,24 +10,24 @@ form.addEventListener('submit', e => {
     const password = form['password'].value;
 
     if (firstName === '') {
-        addErrorTo('firstname', 'First Name is required');   
+        addErrorTo('firstname', 'First Name cannot be empty');   
     } else {
         removeErrorFrom('firstname');
     }
     if (lastName === '') {
-        addErrorTo('lastname', 'Last Name is required');   
+        addErrorTo('lastname', 'Last Name cannot be empty');   
     } else {
         removeErrorFrom('lastname');
     }
     if (email === ''){
         addErrorTo('email', 'Email is required');
-    } else if (!isValid(email)){
-        addErrorTo('email', 'Email is not valid');
+    } else if (!isValid(email)) {
+        addErrorTo('email', 'Looks like this is not an email');
     } else{
         removeErrorFrom('email');
     }  
     if (password === '') {
-        addErrorTo('password', 'Password is required');   
+        addErrorTo('password', 'Password cannot be empty');   
     } else{
         removeErrorFrom('password');
     }
